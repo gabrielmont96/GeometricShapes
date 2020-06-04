@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     var geometricShapesList: [ShapeView] = []
     var geometricShapesUndo: [ShapeView] = []
-    var lastFormTapped: ShapeView?
+    var lastShapeMoved: ShapeView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +59,8 @@ class ViewController: UIViewController {
             shapeSelected.center.y += translation.y
             gesture.setTranslation(.zero, in: shapeSelected)
         case .ended:
-            lastFormTapped = shapeSelected
-            slider.value = Float(lastFormTapped?.transform.a ?? 1)
+            lastShapeMoved = shapeSelected
+            slider.value = Float(lastShapeMoved?.transform.a ?? 1)
         default: break
         }
     }
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderTapped(_ sender: UISlider) {
-        lastFormTapped?.transform = CGAffineTransform(scaleX: CGFloat(sender.value), y: CGFloat(sender.value))
+        lastShapeMoved?.transform = CGAffineTransform(scaleX: CGFloat(sender.value), y: CGFloat(sender.value))
     }
 }
 
