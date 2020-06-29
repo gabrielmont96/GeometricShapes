@@ -8,20 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GeometricShapeViewController: UIViewController {
     @IBOutlet weak var square: UIButton!
     @IBOutlet weak var circle: UIButton!
     @IBOutlet weak var triangle: UIButton!
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var slider: UISlider!
     
-    var geometricShapesList: [ShapeView] = []
-    var geometricShapesUndo: [ShapeView] = []
-    var lastShapeMoved: ShapeView?
+    let presenter = GeometricShapePresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func addShape(_ sender: UIButton) {
@@ -39,14 +36,12 @@ class ViewController: UIViewController {
         
         shape.backgroundColor = UIColor(white: 1, alpha: 0)
         
-        geometricShapesList.append(shape)
-        geometricShapesUndo.removeAll()
-        
         slider.value = 1
         
         shape.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture)))
         
         baseView.addSubview(shape)
+        presenter.addShapeInList(shape)
     }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
@@ -59,28 +54,38 @@ class ViewController: UIViewController {
             shapeSelected.center.y += translation.y
             gesture.setTranslation(.zero, in: shapeSelected)
         case .ended:
-            lastShapeMoved = shapeSelected
-            slider.value = Float(lastShapeMoved?.transform.a ?? 1)
+            slider.value = Float(shapeSelected.transform.a)
+            presenter.lastShapeMoved = shapeSelected
         default: break
         }
     }
     
     @IBAction func undoTapped(_ sender: Any) {
-        guard geometricShapesList.count > 0 else { return }
-        let lastShape = geometricShapesList.removeLast()
-        lastShape.removeFromSuperview()
-        geometricShapesUndo.append(lastShape)
+        presenter.removeShapeFromList()?.removeFromSuperview()
     }
     
     @IBAction func redoTapped(_ sender: Any) {
-        guard geometricShapesUndo.count > 0 else { return }
-        let lastShape = geometricShapesUndo.removeLast()
-        geometricShapesList.append(lastShape)
-        baseView.addSubview(lastShape)
+        guard let shape = presenter.removeShapeFromUndoList() else { return }
+        baseView.addSubview(shape)
     }
     
     @IBAction func sliderTapped(_ sender: UISlider) {
-        lastShapeMoved?.transform = CGAffineTransform(scaleX: CGFloat(sender.value), y: CGFloat(sender.value))
+        presenter.lastShapeMoved?.transform = CGAffineTransform(scaleX: CGFloat(sender.value), y: CGFloat(sender.value))
+    }
+    
+    @IBAction func screenshotTapped(_ sender: Any) {
+        guard presenter.haveShapesInList else {
+            let alert = UIAlertController(title: "Aviso",
+                                          message: "Você ainda não adicionou nenhuma forma geométrica!",
+                                          preferredStyle: .alert)
+            let action = UIAlertAction(title: "Entendi", style: .cancel, handler: nil)
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        guard let image = baseView.takeScreenShot() else { return }
+        let vc = ScreenShotViewController(image: image)
+        self.present(vc, animated: true, completion: nil)
     }
 }
-
