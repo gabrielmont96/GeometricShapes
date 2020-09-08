@@ -17,9 +17,9 @@
 		948DDA3C247C418B0065CF94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 948DDA3B247C418B0065CF94 /* Assets.xcassets */; };
 		948DDA3F247C418B0065CF94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948DDA3D247C418B0065CF94 /* LaunchScreen.storyboard */; };
 		948DDA47247C45AC0065CF94 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948DDA46247C45AC0065CF94 /* ShapeView.swift */; };
-		94AF4A862507D9F2002EB8C0 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A852507D9F2002EB8C0 /* SquareView.swift */; };
-		94AF4A882507D9FD002EB8C0 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A872507D9FD002EB8C0 /* CircleView.swift */; };
-		94AF4A8A2507DA0A002EB8C0 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A892507DA0A002EB8C0 /* TriangleView.swift */; };
+		94AF4A862507D9F2002EB8C0 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A852507D9F2002EB8C0 /* Square.swift */; };
+		94AF4A882507D9FD002EB8C0 /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A872507D9FD002EB8C0 /* Circle.swift */; };
+		94AF4A8A2507DA0A002EB8C0 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A892507DA0A002EB8C0 /* Triangle.swift */; };
 		94AF4A8C2507DA44002EB8C0 /* ShapeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AF4A8B2507DA44002EB8C0 /* ShapeProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +36,9 @@
 		948DDA3E247C418B0065CF94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		948DDA40247C418B0065CF94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		948DDA46247C45AC0065CF94 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
-		94AF4A852507D9F2002EB8C0 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
-		94AF4A872507D9FD002EB8C0 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
-		94AF4A892507DA0A002EB8C0 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleView.swift; sourceTree = "<group>"; };
+		94AF4A852507D9F2002EB8C0 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		94AF4A872507D9FD002EB8C0 /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		94AF4A892507DA0A002EB8C0 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		94AF4A8B2507DA44002EB8C0 /* ShapeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,9 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				948DDA46247C45AC0065CF94 /* ShapeView.swift */,
-				94AF4A852507D9F2002EB8C0 /* SquareView.swift */,
-				94AF4A872507D9FD002EB8C0 /* CircleView.swift */,
-				94AF4A892507DA0A002EB8C0 /* TriangleView.swift */,
+				94AF4A852507D9F2002EB8C0 /* Square.swift */,
+				94AF4A872507D9FD002EB8C0 /* Circle.swift */,
+				94AF4A892507DA0A002EB8C0 /* Triangle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -259,15 +259,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94AF4A882507D9FD002EB8C0 /* CircleView.swift in Sources */,
+				94AF4A882507D9FD002EB8C0 /* Circle.swift in Sources */,
 				940F6B8A24AA3CA500E8A5C2 /* UIViewExtension.swift in Sources */,
 				940F6B8324AA2A0C00E8A5C2 /* GeometricShapeViewController.swift in Sources */,
 				948DDA33247C418A0065CF94 /* AppDelegate.swift in Sources */,
 				940F6B8624AA2C9F00E8A5C2 /* GeometricShapePresenter.swift in Sources */,
-				94AF4A862507D9F2002EB8C0 /* SquareView.swift in Sources */,
+				94AF4A862507D9F2002EB8C0 /* Square.swift in Sources */,
 				940F6B8D24AA3D9D00E8A5C2 /* ScreenShotViewController.swift in Sources */,
 				94AF4A8C2507DA44002EB8C0 /* ShapeProtocol.swift in Sources */,
-				94AF4A8A2507DA0A002EB8C0 /* TriangleView.swift in Sources */,
+				94AF4A8A2507DA0A002EB8C0 /* Triangle.swift in Sources */,
 				948DDA47247C45AC0065CF94 /* ShapeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
