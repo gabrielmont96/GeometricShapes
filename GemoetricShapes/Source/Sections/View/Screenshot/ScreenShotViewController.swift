@@ -24,11 +24,13 @@ class ScreenShotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
     }
     
     @IBAction func shareTapped(_ sender: Any) {
         let share = [image]
-        let activityViewC = UIActivityViewController(activityItems: share, applicationActivities: nil)
+        let activityViewC = UIActivityViewController(activityItems: share as [Any], applicationActivities: nil)
         self.present(activityViewC, animated: true, completion: nil)
     }
 }

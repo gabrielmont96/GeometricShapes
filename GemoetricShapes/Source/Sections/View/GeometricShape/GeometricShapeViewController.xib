@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="baseView" destination="DQA-QO-6n6" id="zcn-Yy-3DO"/>
                 <outlet property="circle" destination="QUg-cf-9P3" id="6yD-KI-BOA"/>
+                <outlet property="image" destination="XcN-wA-gKU" id="U57-XV-Y7p"/>
                 <outlet property="slider" destination="u1X-O0-PT9" id="Cpn-Xj-dAB"/>
                 <outlet property="square" destination="tDb-EB-1ru" id="VRb-5o-HtT"/>
                 <outlet property="triangle" destination="9sn-mh-ok3" id="sz0-jw-K4Q"/>
@@ -33,7 +34,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDb-EB-1ru">
-                                    <rect key="frame" x="0.0" y="0.0" width="114.5" height="24"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="77.5" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="e2t-rQ-Ovm"/>
                                     </constraints>
@@ -44,7 +45,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-cf-9P3">
-                                    <rect key="frame" x="149.5" y="0.0" width="115" height="24"/>
+                                    <rect key="frame" x="112.5" y="0.0" width="77" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="uNl-Ys-3SP"/>
                                     </constraints>
@@ -55,7 +56,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sn-mh-ok3">
-                                    <rect key="frame" x="299.5" y="0.0" width="114.5" height="24"/>
+                                    <rect key="frame" x="224.5" y="0.0" width="77.5" height="24"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="24" id="Hkv-6d-RBX"/>
                                     </constraints>
@@ -63,6 +64,17 @@
                                     <state key="normal" image="triangle" catalog="system"/>
                                     <connections>
                                         <action selector="addShape:" destination="-1" eventType="touchUpInside" id="aGf-vK-tWq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcN-wA-gKU">
+                                    <rect key="frame" x="337" y="0.0" width="77" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="0Yz-5T-eUN"/>
+                                    </constraints>
+                                    <color key="tintColor" red="0.69019607839999997" green="0.0" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="tray.and.arrow.down.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="addShape:" destination="-1" eventType="touchUpInside" id="wog-Be-RjN"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -164,6 +176,7 @@
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="tray.and.arrow.down.fill" catalog="system" width="128" height="114"/>
         <image name="triangle" catalog="system" width="128" height="112"/>
     </resources>
 </document>

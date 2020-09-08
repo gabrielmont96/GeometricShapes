@@ -6,12 +6,12 @@
 //  Copyright © 2020 Gabriel Monteiro Camargo da Silva - GCM. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class GeometricShapePresenter {
-    var geometricShapesList: [ShapeView] = []
-    var geometricShapesUndo: [ShapeView] = []
-    var lastShapeMoved: ShapeView?
+    var geometricShapesList: [UIView] = []
+    var geometricShapesUndo: [UIView] = []
+    var lastShapeMoved: UIView?
     
     var haveShapesInList: Bool {
         return geometricShapesList.count > 0
@@ -21,19 +21,19 @@ class GeometricShapePresenter {
         return geometricShapesUndo.count > 0
     }
     
-    func addShapeInList(_ shape: ShapeView) {
+    func addShapeInList(_ shape: UIView) {
         geometricShapesList.append(shape)
         geometricShapesUndo.removeAll()
     }
     
-    func removeShapeFromList() -> ShapeView? {
+    func removeShapeFromList() -> UIView? {
         guard haveShapesInList else { return nil }
         let removedShape = geometricShapesList.removeLast()
         geometricShapesUndo.append(removedShape)
         return removedShape
     }
     
-    func removeShapeFromUndoList() -> ShapeView? {
+    func removeShapeFromUndoList() -> UIView? {
         guard haveShapeInUndoList else { return nil }
         let removedShape = geometricShapesUndo.removeLast()
         geometricShapesList.append(removedShape)
