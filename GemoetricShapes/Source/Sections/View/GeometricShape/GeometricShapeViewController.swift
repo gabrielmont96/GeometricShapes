@@ -44,11 +44,11 @@ class GeometricShapeViewController: UIViewController {
         
         switch sender {
         case square:
-            shapeView.shape = SquareView(frame: frame)
+            shapeView.shape = SquareView()
         case circle:
-            shapeView.shape = CircleView(frame: frame)
+            shapeView.shape = CircleView()
         case triangle:
-            shapeView.shape = TriangleView(frame: frame)
+            shapeView.shape = TriangleView()
         case image:
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
